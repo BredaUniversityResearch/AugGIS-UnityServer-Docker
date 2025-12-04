@@ -9,6 +9,10 @@
 #   docker run -d -p 45101:50123/udp docker-hub.mspchallenge.info/cradlewebmaster/auggis-unity-server:latest
 #   docker run -d -e MSPXRClientPort=45101 --network host docker-hub.mspchallenge.info/cradlewebmaster/auggis-unity-server:latest
 #   docker run -d -p 45100:50123/udp -e APP_ENV=dev -e HEALTHCHECK_WRITER_MODE=1 -e MSP_CHALLENGE_API_BASE_URL_FOR_SERVER=http://host.docker.internal/1/ docker-hub.mspchallenge.info/cradlewebmaster/auggis-unity-server:dev
+#
+# To make the local zip, from ImmersiveTwins-Unity repo, run (as non-administrator):
+#   UNITY_BINARY="/...SOME_PATH../6000.2.6f2/Editor/Unity.exe" bash build_server.sh
+# And it will output the build to ./Builds/Server. Zip the content without sub-folders to build.zip. Move this zip file to this repo's ./docker/
 
 # Create a container built with the base image
 FROM unitymultiplay/linux-base-image:ubuntu-noble
