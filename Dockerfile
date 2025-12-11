@@ -31,7 +31,7 @@ RUN --mount=type=secret,id=headers \
         --output "build.zip" && \
     (test -f build.zip || (echo "Error: file build.zip not found!" && exit 1)) && \
     rm -rf /app && unzip build.zip -d /app && rm build.zip && \
-    (test -f /app/ImmersiveTwins-Unity || (echo "Error: Binary file /app/ImmersiveTwins-Unity not found!" && exit 1))
+    (test -f /app/AugGIS || (echo "Error: Binary file /app/AugGIS not found!" && exit 1))
 
 # Set the working directory to /app and set binary ownership and permissions
 WORKDIR /app
@@ -39,7 +39,7 @@ COPY --chown=mpukgame . .
 COPY --chown=mpukgame --chmod=755 docker/dev-healthcheck-writer.sh /home/mpukgame/dev-healthcheck-writer.sh
 COPY --chown=mpukgame --chmod=755 docker/docker-entrypoint.sh /home/mpukgame/docker-entrypoint.sh
 COPY --chown=mpukgame --chmod=755 docker/healthcheck.sh /home/mpukgame/healthcheck.sh
-RUN chmod +x /app/ImmersiveTwins-Unity
+RUN chmod +x /app/AugGIS
 
 # Switch back to the default user (if necessary)
 USER mpukgame
