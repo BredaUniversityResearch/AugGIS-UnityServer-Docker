@@ -5,4 +5,4 @@ if [ "$APP_ENV" = "dev" ]; then
   bash /home/mpukgame/dev-healthcheck-writer.sh &
 fi
 
-exec /app/AugGIS
+exec /app/Auggis
