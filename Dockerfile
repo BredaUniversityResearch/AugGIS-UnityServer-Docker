@@ -24,7 +24,7 @@ RUN --mount=type=secret,id=headers \
     (test -f /run/secrets/headers || (echo "Error: secret "headers" is not set!" && exit 1)) && \
     apt-get update && \
 	apt-get install -y --no-install-recommends curl unzip dnsutils && \
-    curl --fail-with-body -X "GET" -L "https://nexus.cradle.buas.nl/service/rest/v1/search/assets/download?sort=name&direction=desc&q=UnityServer/*&repository=MSP_ProceduralOceanViewUnity-Main" \
+    curl --fail-with-body -X "GET" -L "https://nexus.cradle.buas.nl/service/rest/v1/search/assets/download?sort=name&direction=desc&q=LinuxServer/*&repository=MSP_ProceduralOceanViewUnity-Main" \
         -H "accept: application/json" \
         -H @/run/secrets/headers \
         -H "X-Nexus-UI: true" \
